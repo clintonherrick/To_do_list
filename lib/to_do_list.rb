@@ -16,4 +16,8 @@ class ToDo
   define_method(:save) do
     @@all_tasks.push(self)
   end
+
+  define_singleton_method(:clear) do
+    @@all_tasks = []
+  end
 end

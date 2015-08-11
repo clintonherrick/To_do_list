@@ -2,6 +2,10 @@ require('rspec')
 require('to_do_list')
 
 describe(ToDo) do
+  before() do
+    ToDo.clear()
+  end
+
   describe("#description") do
     it("lets you give it a description") do
       test_task = ToDo.new("scrub the zebra")
@@ -25,7 +29,7 @@ describe(ToDo) do
 
   describe(".clear") do
     it("empties out all of the saved tasks") do
-      Todo.new("wash the lion").save()
+      ToDo.new("wash the lion").save()
       ToDo.clear()
       expect(ToDo.all()).to(eq([]))
     end
