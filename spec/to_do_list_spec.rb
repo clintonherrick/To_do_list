@@ -22,4 +22,12 @@ describe(ToDo) do
       expect(ToDo.all()).to(eq([test_task]))
     end
   end
+
+  describe(".clear") do
+    it("empties out all of the saved tasks") do
+      Todo.new("wash the lion").save()
+      ToDo.clear()
+      expect(ToDo.all()).to(eq([]))
+    end
+  end
 end
